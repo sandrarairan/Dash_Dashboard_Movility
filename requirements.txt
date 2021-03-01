@@ -10,3 +10,4 @@ pandas
 plotly
 plotly_express
 xlrd
+gunicorn

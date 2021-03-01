@@ -22,6 +22,11 @@ colors = {
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
+
+
+# this is needed for the procfile to deploy to heroku
+server = app.server
+
 df = pd.read_excel("/Users/sandrarairan/Documents/desarrollo/dash_mobility/movilidad.xlsx", engine='openpyxl')
 
 df_table = df.groupby(['Ciudad', 'dFlag']).agg({'Viajes_std':'size', 'Viajes_lab':'size', 'Viajes_tr':'size'}).reset_index()
